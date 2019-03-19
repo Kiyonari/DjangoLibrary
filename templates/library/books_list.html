@@ -15,7 +15,11 @@
 
     <div class="container" style="padding-left: 100px;padding-right: 100px;">
         {% for book in books %}
-            <ul>{{ book.title }} - {{ book.publishing_date | date:"Y"}}</ul>
+            <ul>
+                <li class="list-group">
+                    {{ book.title }} - {{ book.publishing_date | date:"Y"}}
+                </li>
+            </ul>
         {% endfor %}
     </div>
 
