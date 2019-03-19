@@ -2,16 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
     <title>Authors</title>
 </head>
 <body>
-    <p>List of every authors we have</p>
-    {% for author in authors_list %}
-        <li>
-            <a href="{{ author.id }}">{{ author }}</a>
-        </li>
-        <ul>{{ author.first_name }} {{ author.last_name }}</ul>
-        {{ author.books }}
-    {% endfor %}
+    <div class="jumbotron text-center">
+        <h1>Authors</h1>
+        <p>List of every author</p>
+    </div>
+    <div class="container" style="padding-left: 100px;padding-right: 100px;">
+        {% for author in authors_list %}
+            <ul>
+                <a href="{{ author.id }}">{{ author }}</a>
+            </ul>
+        {% endfor %}
+    </div>
 </body>
 </html>

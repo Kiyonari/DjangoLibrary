@@ -11,7 +11,7 @@ def index(request):
 
 def books(request):
     books_list = Book.objects.all()
-    template = loader.get_template('library/books.html')
+    template = loader.get_template('library/books_list.html')
     context = {'books': books_list}
     return HttpResponse(template.render(context, request))
 

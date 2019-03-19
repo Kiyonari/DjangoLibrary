@@ -5,16 +5,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossorigin="anonymous">
-    <title>{{ author.first_name }} {{ author.last_name }}</title>
+    <title>Books</title>
 </head>
 <body>
     <div class="jumbotron text-center">
-        <h1>{{ author.first_name }} {{ author.last_name }}</h1>
+        <h1>Books</h1>
+        <p>List of every book</p>
     </div>
+
     <div class="container" style="padding-left: 100px;padding-right: 100px;">
-        {% for book in author.book_set.all %}
-            <ul>{{ book.title }} - {{ book.publishing_date }}</ul>
+        {% for book in books %}
+            <ul>{{ book.title }} - {{ book.publishing_date | date:"Y"}}</ul>
         {% endfor %}
     </div>
+
 </body>
 </html>

@@ -13,6 +13,9 @@ class Author(models.Model):
     last_name = models.CharField(max_length=30)
     date_of_birth = models.DateField('Date of birth')
 
+    class Meta:
+        ordering = ['last_name']
+
     def __str__(self):
         return self.first_name + ' ' + self.last_name
 
@@ -23,6 +26,10 @@ class Book(models.Model):
     genre = models.ManyToManyField(Genre)
     page_number = models.IntegerField()
     publishing_date = models.DateField('Date of publication')
+    front_cover = models.ImageField(default="./pictures/no-image-available.png")
+
+    class Meta:
+        ordering = ['publishing_date']
 
     def __str__(self):
-        return self.title
+        return self.title + ' (' + str(self.publishing_date.__format__("%Y")) + ')'
