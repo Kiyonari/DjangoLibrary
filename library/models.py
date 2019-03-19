@@ -19,8 +19,9 @@ class Author(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=50)
-    page_number = models.IntegerField()
+    author = models.ManyToManyField(Author)
     genre = models.ManyToManyField(Genre)
+    page_number = models.IntegerField()
     publishing_date = models.DateField('Date of publication')
 
     def __str__(self):

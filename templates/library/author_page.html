@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ author.id }}</title>
+</head>
+<body>
+{{ books }}
+    <p>{{ author.first_name }} {{ author.last_name }}</p>
+    {% for book in books_list %}
+        <p>{{ book.author.first_name }}</p>
+        {% if book.author.first_name == author.first_name %}
+
+        {% endif %}
+    {% endfor %}
+</body>
+</html>

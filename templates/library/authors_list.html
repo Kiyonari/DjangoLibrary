@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authors</title>
+</head>
+<body>
+    <p>List of every authors we have</p>
+    {% for author in authors_list %}
+        <li>
+            <a href="{{ author.id }}">{{ author }}</a>
+        </li>
+        <ul>{{ author.first_name }} {{ author.last_name }}</ul>
+        {{ author.books }}
+    {% endfor %}
+</body>
+</html>
